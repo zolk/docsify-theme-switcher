@@ -1,8 +1,8 @@
 .theme-switcher {
   position: absolute;
+  z-index: 1;
   top: 1rem;
   right: 6.25rem;
   display: flex;
   gap: 0.5rem;
-  z-index: 1;
 }
