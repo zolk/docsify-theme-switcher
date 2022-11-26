@@ -2,9 +2,9 @@
   "name": "docsify-theme-switcher",
   "version": "1.0.0",
   "description": "A plugin for switching themes in Docsify.",
-  "main": "src/theme-switcher.js",
+  "main": "dist/theme-switcher.js",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
     "prepare": "husky install"
