@@ -35,7 +35,6 @@ function themeSwitcher(hook, vm) {
 }
 
 if (window) {
-  // Init plugin
   window.$docsify.plugins = [].concat(
     window.$docsify.plugins || [],
     themeSwitcher
