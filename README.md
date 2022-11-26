@@ -1,2 +1,3 @@
 # docsify-theme-switcher
-A plugin for switching themes in Docsify.
+
+A Docsify plugin for switching themes.
