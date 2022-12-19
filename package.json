@@ -7,7 +7,8 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "esbuild src/theme-switcher.js --bundle --minify --sourcemap --outfile=dist/theme-switcher.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/zolk/docsify-theme-switcher#readme",
   "devDependencies": {
+    "esbuild": "^0.16.9",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
