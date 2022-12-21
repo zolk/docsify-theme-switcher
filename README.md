@@ -4,7 +4,7 @@
 
 A Docsify plugin that adds a dropdown menu for switching between multiple themes.
 
-This plugin will add a specified class name to your Docsify's site `<body>` tag,
+This plugin will add a specified class name to your Docsify site's `<body>` tag,
 which you can then use to make styling changes. The selected theme will be
 stored in `localStorage`, so it will persist between page loads.
 
@@ -42,15 +42,15 @@ Default styles, which you can override or replace with your own:
 - Type: `Array<{ name: String, class: String }>`
 - Default: `undefined`
 
-An array of themes with a `name` for the select menu and a `class` which will
-be added to the document's `<body>` tag upon activation.
+**Required.** An array of themes with a `name` for the select menu and a `class`
+which will be added to the document's `<body>` tag upon activation.
 
 ### themeSelector.pathRegex
 
 - Type: `RegExp`
 - Default: `undefined`
 
-An option regex for displaying the theme selector only on certain pages. For
+An optional regex for displaying the theme selector only on certain pages. For
 example, a value of `/components\/(.+)/` will only show the selector on pages
 that contain `/components/` in the path.
 
