@@ -9,7 +9,8 @@
   "scripts": {
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
-    "build": "esbuild src/theme-switcher.js --bundle --minify --sourcemap --outfile=dist/theme-switcher.min.js"
+    "build": "esbuild src/theme-switcher.js --bundle --minify --sourcemap --outfile=dist/theme-switcher.min.js",
+    "start": "npm run build && docsify serve ./docs"
   },
   "repository": {
     "type": "git",
