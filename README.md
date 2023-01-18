@@ -56,7 +56,7 @@ that contain `/components/` in the path.
 
 ## Live Example
 
-You can see this plugin in use as part of **DS Starter Kit** ([Live example](https://ds-starter-kit.vercel.app/components/button), [GitHub project](https://github.com/zolk/ds-starter-kit)).
+You can see this plugin in use as part of **Docsify Breeze** ([Live example](https://docsify-breeze.vercel.app/components/button), [GitHub project](https://github.com/zolk/docsify-breeze)).
 
 ## Local Demo
 
