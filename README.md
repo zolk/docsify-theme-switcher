@@ -68,9 +68,12 @@ First, clone this repo:
 git clone https://github.com/zolk/docsify-theme-switcher.git
 ```
 
-Then install dependencies (you'll need [Node](https://nodejs.org/en/download/package-manager/) installed):
+Then install dependencies (you'll need
+[Node](https://nodejs.org/en/download/package-manager/) installed and the
+`docsify` command available):
 
 ```
+npm install -g docsify-cli
 npm install
 ```
 
