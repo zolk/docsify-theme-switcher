@@ -14,10 +14,10 @@ import {
 } from "./lib/functions.js";
 
 function themeSwitcher(hook, vm) {
-  const { themes } = vm.config.themeSelector;
+  const { themes } = vm.config.themeSelector || {};
 
   hook.mounted(() => {
-    if (themes) {
+    if (vm.config.themeSelector && themes.length) {
       document.body.classList.add(getActiveTheme());
 
       const themeSwitcher = renderThemeSwitcher();
@@ -30,8 +30,10 @@ function themeSwitcher(hook, vm) {
   });
 
   hook.beforeEach(() => {
-    const selector = document.querySelector(".theme-switcher");
-    setVisibility(selector);
+    if (vm.config.themeSelector && themes.length) {
+      const selector = document.querySelector(".theme-switcher");
+      setVisibility(selector);
+    }
   });
 }
 
