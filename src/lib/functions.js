@@ -17,11 +17,13 @@ function getThemeKey(theme) {
 
 function setTheme(newTheme) {
   localStorage.setItem("theme", newTheme);
-  themes?.forEach((theme) => {
-    const isActive = getThemeKey(theme) === newTheme;
-    getThemeClasses(theme).forEach((cls) =>
-      document.body.classList.toggle(cls, isActive)
-    );
+  const activeTheme = themes?.find((theme) => getThemeKey(theme) === newTheme);
+  const activeClasses = new Set(
+    activeTheme ? getThemeClasses(activeTheme) : []
+  );
+  const allClasses = new Set(themes?.flatMap(getThemeClasses));
+  allClasses.forEach((cls) => {
+    document.body.classList.toggle(cls, activeClasses.has(cls));
   });
 }
 
