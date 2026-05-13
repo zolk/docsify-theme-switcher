@@ -39,11 +39,20 @@ Default styles, which you can override or replace with your own:
 
 ### themeSelector.themes
 
-- Type: `Array<{ name: String, class: String }>`
+- Type: `Array<{ name: String, class: String | Array<String> }>`
 - Default: `undefined`
 
 **Required.** An array of themes with a `name` for the select menu and a `class`
-which will be added to the document's `<body>` tag upon activation.
+which will be added to the document's `<body>` tag upon activation. The `class`
+value may be a single class name or an array of class names, all of which will
+be toggled together.
+
+```js
+themes: [
+  { name: "Light Theme", class: "theme-light" },
+  { name: "Dark Theme", class: ["theme-dark", "high-contrast"] },
+],
+```
 
 ### themeSelector.pathRegex
 
