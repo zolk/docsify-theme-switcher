@@ -8,7 +8,7 @@
  */
 import "./theme-switcher.css";
 import {
-  getActiveTheme,
+  getActiveThemeClasses,
   renderThemeSwitcher,
   setVisibility,
 } from "./lib/functions.js";
@@ -18,7 +18,7 @@ function themeSwitcher(hook, vm) {
 
   hook.mounted(() => {
     if (vm.config.themeSelector && themes.length) {
-      document.body.classList.add(getActiveTheme());
+      document.body.classList.add(...getActiveThemeClasses());
 
       const themeSwitcher = renderThemeSwitcher();
       setVisibility(themeSwitcher);

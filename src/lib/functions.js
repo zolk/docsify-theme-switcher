@@ -7,20 +7,33 @@
 
 const { themes, pathRegex } = window.$docsify.themeSelector || {};
 
+function getThemeClasses(theme) {
+  return Array.isArray(theme.class) ? theme.class : [theme.class];
+}
+
+function getThemeKey(theme) {
+  return getThemeClasses(theme).join(" ");
+}
+
 function setTheme(newTheme) {
   localStorage.setItem("theme", newTheme);
-  themes?.forEach((theme) =>
-    document.body.classList.toggle(theme.class, theme.class === newTheme)
-  );
+  themes?.forEach((theme) => {
+    const isActive = getThemeKey(theme) === newTheme;
+    getThemeClasses(theme).forEach((cls) =>
+      document.body.classList.toggle(cls, isActive)
+    );
+  });
 }
 
 function renderThemeSelect() {
   const themeSelect = document.createElement("select");
   themeSelect.id = "theme-switcher__select";
-  themes?.forEach(
-    (theme) =>
-      (themeSelect.innerHTML += `<option value=${theme.class}>${theme.name}</option`)
-  );
+  themes?.forEach((theme) => {
+    const option = document.createElement("option");
+    option.value = getThemeKey(theme);
+    option.textContent = theme.name;
+    themeSelect.append(option);
+  });
   themeSelect.value = getActiveTheme();
   themeSelect.onchange = () => {
     setTheme(themeSelect.value);
@@ -38,7 +51,11 @@ function showSelector(pathRegex) {
 }
 
 export function getActiveTheme() {
-  return localStorage.getItem("theme") || (themes && themes[0].class);
+  return localStorage.getItem("theme") || (themes && getThemeKey(themes[0]));
+}
+
+export function getActiveThemeClasses() {
+  return getActiveTheme().split(" ").filter(Boolean);
 }
 
 export function renderThemeSwitcher() {
